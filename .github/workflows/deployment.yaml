@@ -1,7 +1,7 @@
 name: Run React Application deploy
 on: push
 jobs:
-  test:
+  deploy:
     runs-on: ubuntu-latest
     steps:
       - name: Copy repository code
@@ -13,25 +13,8 @@ jobs:
         run: npm install
       - name: React Application Test
         run: npm run test
-  lint:
-    runs-on: ubuntu-latest
-    needs: test
-    steps:
-      - name: Copy repository code
-        uses: actions/checkout@v4
-      - name: Install dependecies
-        run: npm install
       - name: React Application Lint
         run: npm run lint
-  build:
-    runs-on: ubuntu-latest
-    needs: lint
-    steps:
-      - name: Copy repository code
-        uses: actions/checkout@v4
-      - name: Install dependecies
-        run: npm install
       - name: React Application Build
         run: npm run build
-
-  
+      
