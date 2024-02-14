@@ -1,0 +1,8 @@
+name: Demo WorkFlow
+on: workflow_dispatch
+jobs:
+  print_demo:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print hello message
+        run: echo Hello all from GH Actions!
