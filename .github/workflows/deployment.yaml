@@ -1,0 +1,35 @@
+name: Run React Application deploy
+on: push
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Copy repository code
+        # This action checks-out your repository under $GITHUB_WORKSPACE, 
+        # so your workflow can access it.
+        uses: actions/checkout@v4
+      - name: Install dependecies
+        # Install from package-lock.json
+        run: npm ci
+      - name: React Application Test
+        run: npm run test
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Copy repository code
+        uses: actions/checkout@v4
+      - name: Install dependecies
+        run: npm ci
+      - name: React Application Lint
+        run: npm run lint
+  build:
+    runs-on: ubuntu-latest
+      steps:
+        - name: Copy repository code
+          uses: actions/checkout@v4
+        - name: Install dependecies
+          run: npm ci
+        - name: React Application Build
+          run: npm run build
+
+  
