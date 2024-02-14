@@ -10,7 +10,7 @@ jobs:
         uses: actions/checkout@v4
       - name: Install dependecies
         # Install from package-lock.json
-        run: npm ci
+        run: npm install
       - name: React Application Test
         run: npm run test
   lint:
@@ -19,7 +19,7 @@ jobs:
       - name: Copy repository code
         uses: actions/checkout@v4
       - name: Install dependecies
-        run: npm ci
+        run: npm install
       - name: React Application Lint
         run: npm run lint
   build:
@@ -28,7 +28,7 @@ jobs:
       - name: Copy repository code
         uses: actions/checkout@v4
       - name: Install dependecies
-        run: npm ci
+        run: npm install
       - name: React Application Build
         run: npm run build
 
